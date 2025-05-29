@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante El toque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sabor Caribeño</h1>
+        <nav>
+            <div class="tab-container">
+                <button class="tab-button active" onclick="openTab('inicio')">Inicio</button>
+                <button class="tab-button" onclick="openTab('menu')">Menú</button>
+                <button class="tab-button" onclick="openTab('nosotros')">Sobre Nosotros</button>
+                <button class="tab-button" onclick="openTab('galeria')">Galería</button>
+                <button class="tab-button" onclick="openTab('reservaciones')">Reservaciones</button>
+                <button class="tab-button" onclick="openTab('contacto')">Contacto</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="tab-content active">
+        <h2>Bienvenidos al El toque</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident asperiores, quia accusamus blanditiis recusandae expedita cumque nobis nam, suscipit debitis impedit aut distinctio tenetur! Inventore eum accusamus sequi consequatur odit?</p>
+    </section>
+
+    <section id="menu" class="tab-content">
+        <h2>Nuestro Menú Caribeño</h2>
+        <ul>
+            <li>Arroz con coco y camarones</li>
+            <li>Sancocho de pescado</li>
+            <li>Mofongo con carne frita</li>
+            <li>Rondón (sopa caribeña)</li>
+            <li>Patacones con hogao</li>
+            <li>Pescado frito con tajadas</li>
+            <li>Ceviche de camarón</li>
+            <li>Arepas de huevo</li>
+            <li>Bollos de mazorca</li>
+            <li>Postre: Cocadas y alegrías</li>
+        </ul>
+    </section>
+
+    <section id="nosotros" class="tab-content">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un restaurante familiar con más de 20 años de experiencia llevando los auténticos sabores del Caribe a tu mesa. Nuestros ingredientes son frescos y seleccionados cuidadosamente para ofrecerte la mejor experiencia gastronómica.</p>
+        <p>Nuestros chefs tienen raíces caribeñas y conocen los secretos de la cocina costeña tradicional.</p>
+    </section>
+
+    <section id="galeria" class="tab-content">
+        <h2>Galería Caribeña</h2>
+        <div class="galeria">
+            <img src="" alt="Arroz con coco y camarones">
+            <img src="" alt="Sancocho de pescado">
+            <img src="" alt="Ceviche caribeño">
+            <img src="" alt="Patacones">
+            <img src="" alt="Pescado frito">
+            <img src="" alt="Postres tropicales">
+        </div>
+    </section>
+
+    <section id="reservaciones" class="tab-content">
+        <h2>Reserva tu Mesa</h2>
+        <form>
+            <label>Nombre:</label>
+            <input type="text" required>
+           
+            <label>Email:</label>
+            <input type="email" required>
+           
+            <label>Teléfono:</label>
+            <input type="tel" required>
+           
+            <label>Fecha:</label>
+            <input type="date" required>
+           
+            <label>Hora:</label>
+            <input type="time" required>
+           
+            <label>Número de personas:</label>
+            <input type="number" min="1" max="20" required>
+           
+            <label>Comentarios especiales:</label>
+            <textarea rows="4"></textarea>
+           
+            <button type="submit">Reservar Ahora</button>
+        </form>
+    </section>
+
+    <section id="contacto" class="tab-content">
+        <h2>Contacto</h2>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">¡Visítanos y déjate llevar por el sabor del El toque!</p>
+            <p><strong>Dirección:</strong> Calle los ceibos #1444, Ciudad Aniñada</p>
+            <p><strong>Teléfono:</strong> +593 95 801 7741</p>
+            <p><strong>Email:</strong> elqtoque@saborcaribeno.com</p>
+            <p><strong>Horario:</strong> Lunes a Domingo: 11:00 AM - 10:00 PM</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <iframe src=""></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Restaurante El toque | Todos los derechos reservados</p>
+        <div style="margin-top: 15px;">
+            <a href="#" style="color: var(--color-accent); margin: 0 10px; text-decoration: none;">Facebook</a>
+            <a href="#" style="color: var(--color-accent); margin: 0 10px; text-decoration: none;">Instagram</a>
+            <a href="#" style="color: var(--color-accent); margin: 0 10px; text-decoration: none;">TripAdvisor</a>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.tab-button');
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab-button[onclick="openTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
